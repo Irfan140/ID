@@ -1,0 +1,67 @@
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.dump
+*.DS_Store
+
+# Dependency directories (Node.js, Python, etc.) #
+#################################################
+node_modules/
+venv/
+env/
+.env/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+target/
+
+# Sensitive files #
+###################
+.env
+*.pem
+*.key
+
+# Temporary files and directories #
+####################################
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+/tmp/
+/temp/
+
+# IDE specific files #
+######################
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+
+# Build artifacts #
+##################
+*.o
+*.a
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+
+# Package Manager Specific #
+############################
+package-lock.json # If you're using yarn, use yarn.lock instead.
+yarn.lock # If you're using npm, use package-lock.json instead.
