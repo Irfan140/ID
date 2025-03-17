@@ -9,10 +9,15 @@ const PORT = 3000;
 
 const cors = require("cors");
 
-// Enable CORS for frontend requests
+
+
+// Enable CORS for your frontend domain
 app.use(cors({
-    origin: 'https://id-1fes.onrender.com'  // Allow frontend origin
+    origin: 'https://id-1fes.onrender.com',  // Your frontend URL
+    methods: ['POST', 'GET'],
+    credentials: true  // If you're sending cookies or authorization headers
 }));
+
 
 
 
