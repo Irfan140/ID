@@ -77,4 +77,4 @@ const sendEmailWithAttachment = (filePath, callback) => {
     });
 };
 
-module.exports = saveToExcel;
+module.exports = {saveToExcel};
