@@ -12,7 +12,7 @@ document.getElementById("idForm").addEventListener("submit", async function (e) 
     document.getElementById("idCard").classList.remove("hidden");
 
     // Send Data to Backend
-    await fetch("https://id-1-dxcx.onrender.com", {
+    await fetch("https://id-1fes.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, idNumber })

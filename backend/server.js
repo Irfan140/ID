@@ -13,7 +13,7 @@ const cors = require("cors");
 
 // Enable CORS for your frontend domain
 app.use(cors({
-    origin: 'https://id-1fes.onrender.com',  // Your frontend URL
+    origin: 'https://id-1-dxcx.onrender.com',  // Your frontend URL
     methods: ['POST', 'GET'],
     credentials: true  // If you're sending cookies or authorization headers
 }));
