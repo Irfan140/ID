@@ -29,23 +29,21 @@ const saveToExcel = (data, callback) => {
     XLSX.writeFile(workbook, filePath);
 
     // Send email after saving
-    sendEmailWithAttachment(filePath);
-
-    callback(null, 'Data saved successfully and email sent!');
+    sendEmailWithAttachment(filePath, callback); // Moved callback handling inside
 };
 
-const sendEmailWithAttachment = (filePath) => {
+const sendEmailWithAttachment = (filePath, callback) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: process.env.EMAIL,         // Add your email in .env file
-            pass: process.env.EMAIL_PASS    // Add your email app password in .env file
+            user: process.env.EMAIL,
+            pass: process.env.EMAIL_PASS
         }
     });
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: process.env.RECIPIENT_EMAIL,  // Your email or the desired recipient
+        to: process.env.RECIPIENT_EMAIL,
         subject: 'New ID Card Data - Excel File',
         text: 'Please find the attached Excel file with the latest data.',
         attachments: [
@@ -59,8 +57,10 @@ const sendEmailWithAttachment = (filePath) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error('Error sending email:', error);
+            callback(error, null); // Added proper callback error handling
         } else {
             console.log('Email sent successfully:', info.response);
+            callback(null, 'Data saved successfully and email sent!');
         }
     });
 };
