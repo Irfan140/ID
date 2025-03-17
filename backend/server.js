@@ -10,11 +10,11 @@ const PORT = 3000;
 const cors = require("cors");
 
 // Enable CORS for frontend requests
+const cors = require('cors');
 app.use(cors({
-    origin: "http://localhost:3000", // Change this if your frontend URL differs
-    methods: ["POST", "GET"],
-    allowedHeaders: ["Content-Type"]
+    origin: 'https://id-1fes.onrender.com'  // Allow frontend origin
 }));
+
 
 
 app.use(bodyParser.json());
